@@ -34,10 +34,6 @@ app.post('/signup', (req,res) => {
     })
 })
 
-// app.post('/login', (req,res) => {
-
-// })
-
 app.post('/login', function(req, res) {
     const { email, password } = req.body;
     User.findOne({ email }, function(err, user) {
@@ -72,6 +68,41 @@ app.post('/login', function(req, res) {
       }
     });
   });
+
+//Add device
+app.post('/add', (req, res) => {
+    let device = {
+        dname: req.body.dname,
+        ip: req.body.ip,
+        mac: req.body.mac,
+        uid: req.body.uid
+    }
+    User.findOne({email: req.body.email}).then((doc) => {
+        
+        doc.devices.push(device);
+        doc.save().then((resdoc) => {
+            res.send(resdoc);
+        })
+    }).catch((e) => {
+        res.status(500).send(e);
+    })
+})
+
+//Delete device
+app.post('/delete', (req, res) => {
+    User.findOne({email: req.body.email}).then((user) => {
+
+        user.devices = user.devices.filter(( device ) => {
+            return device.dname !== req.body.dname;
+        });
+        user.save().then((resdoc) => {
+            res.send(resdoc);
+        })
+
+    }).catch((e) => {
+        res.status(500).send(e);
+    })
+})
 
 
 app.listen(port, () => {
