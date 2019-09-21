@@ -42,3 +42,7 @@ class User {
         //server logic here with parameters
     }
 }
+
+struct UserResponse {
+    
+}
