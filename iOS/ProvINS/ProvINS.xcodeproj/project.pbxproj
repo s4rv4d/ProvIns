@@ -14,6 +14,11 @@
 		40CE26CE2335E7FC002DAED2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CE26CC2335E7FC002DAED2 /* LaunchScreen.storyboard */; };
 		40CE26DA2335EB7A002DAED2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26D92335EB7A002DAED2 /* UserModel.swift */; };
 		40CE26DC2335EC29002DAED2 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26DB2335EC29002DAED2 /* CardModel.swift */; };
+		40CE26DF2335F0AB002DAED2 /* ServerCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26DE2335F0AB002DAED2 /* ServerCall.swift */; };
+		40CE26E12335F2E7002DAED2 /* ProvinsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26E02335F2E7002DAED2 /* ProvinsError.swift */; };
+		40CE26E32335F2FE002DAED2 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26E22335F2FE002DAED2 /* SignUpService.swift */; };
+		40CE26E52335F316002DAED2 /* loginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26E42335F316002DAED2 /* loginService.swift */; };
+		40CE26E72335F31F002DAED2 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26E62335F31F002DAED2 /* CardService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		40CE26CF2335E7FC002DAED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40CE26D92335EB7A002DAED2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		40CE26DB2335EC29002DAED2 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		40CE26DE2335F0AB002DAED2 /* ServerCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCall.swift; sourceTree = "<group>"; };
+		40CE26E02335F2E7002DAED2 /* ProvinsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinsError.swift; sourceTree = "<group>"; };
+		40CE26E22335F2FE002DAED2 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		40CE26E42335F316002DAED2 /* loginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginService.swift; sourceTree = "<group>"; };
+		40CE26E62335F31F002DAED2 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
 		4EAFBAF0EB362545A0AD1BDE /* Pods-ProvINS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProvINS.release.xcconfig"; path = "Target Support Files/Pods-ProvINS/Pods-ProvINS.release.xcconfig"; sourceTree = "<group>"; };
 		CF2A02DFFB96DD5E04467F63 /* Pods-ProvINS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProvINS.debug.xcconfig"; path = "Target Support Files/Pods-ProvINS/Pods-ProvINS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +77,7 @@
 				40CE26D82335E88A002DAED2 /* Model */,
 				40CE26D52335E823002DAED2 /* Controller */,
 				40CE26D72335E83F002DAED2 /* Views */,
+				40CE26DD2335F03E002DAED2 /* Network */,
 				40CE26CA2335E7FC002DAED2 /* Assets.xcassets */,
 				40CE26CF2335E7FC002DAED2 /* Info.plist */,
 			);
@@ -84,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				40CE26C32335E7FA002DAED2 /* AppDelegate.swift */,
+				40CE26E02335F2E7002DAED2 /* ProvinsError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -104,6 +116,17 @@
 				40CE26DB2335EC29002DAED2 /* CardModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		40CE26DD2335F03E002DAED2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				40CE26DE2335F0AB002DAED2 /* ServerCall.swift */,
+				40CE26E22335F2FE002DAED2 /* SignUpService.swift */,
+				40CE26E42335F316002DAED2 /* loginService.swift */,
+				40CE26E62335F31F002DAED2 /* CardService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		5D07EC451E03666CA706366F /* Pods */ = {
@@ -201,6 +224,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ProvINS/Pods-ProvINS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -208,6 +232,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -246,8 +271,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				40CE26DA2335EB7A002DAED2 /* UserModel.swift in Sources */,
+				40CE26E32335F2FE002DAED2 /* SignUpService.swift in Sources */,
 				40CE26C42335E7FA002DAED2 /* AppDelegate.swift in Sources */,
+				40CE26E52335F316002DAED2 /* loginService.swift in Sources */,
+				40CE26DF2335F0AB002DAED2 /* ServerCall.swift in Sources */,
+				40CE26E12335F2E7002DAED2 /* ProvinsError.swift in Sources */,
 				40CE26DC2335EC29002DAED2 /* CardModel.swift in Sources */,
+				40CE26E72335F31F002DAED2 /* CardService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

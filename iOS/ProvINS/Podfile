@@ -8,4 +8,5 @@ target 'ProvINS' do
   # Pods for ProvINS
 	pod 'Alamofire'
 	pod 'SwiftyJSON'
+  pod 'AWSCore'
 end

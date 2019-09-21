@@ -29,6 +29,14 @@ class User {
         //logout logic here
     }
     
+    class func displayEmail() -> String?{
+        if let userObjectStored = UserDefaults.standard.object(forKey: "User") as? User{
+            let userObj = userObjectStored
+            return userObj.email
+        }
+        return nil
+    }
+    
     //MARK: - Functions
     func loginWithEmail(email:String, password:String) {
         //server logic here with parameters
