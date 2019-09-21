@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoUri = 'mongodb://UddhavNavneeth:ProvInsPassword08@ds014808.mlab.com:14808/provins';
+mongoUri = `mongodb://${process.env.MLAB_ID}:${process.env.MLAB_PASS}@ds014808.mlab.com:14808/provins`;
 mongoose.connect(mongoUri, function(err) {
     if (err) {
         throw err;

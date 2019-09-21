@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
 const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer');
+const pass = require("nanoid");
+require('dotenv').config();
 
 let {User} = require('./models/user');
 
@@ -30,7 +33,8 @@ app.post('/signup', (req,res) => {
     user.save().then((doc) => {
         res.send(doc);
     }).catch((e) => {
-        res.send('Unsuccesful SignUp');
+        console.log(e);
+        res.status(500).send('Unsuccesful SignUp');
     })
 })
 
@@ -64,6 +68,7 @@ app.post('/newSignup', (req,res) => {
     
 })
 
+
 app.post('/login', function(req, res) {
     const { email, password } = req.body;
     User.findOne({ email }, function(err, user) {
@@ -81,6 +86,7 @@ app.post('/login', function(req, res) {
       } else {
         user.isCorrectPassword(password, function(err, same) {
           if (err) {
+              console.log(err);
             res.status(500)
               .json({
                 error: 'Internal error with password please try again'
@@ -98,6 +104,7 @@ app.post('/login', function(req, res) {
       }
     });
   });
+
 
 //change password
 app.post('/changepassword', (req, res) => {
@@ -158,13 +165,16 @@ app.post('/resetpassword', (req, res) => {
     });
 })
 
+
 //Add device
 app.post('/add', (req, res) => {
     let device = {
-        dname: req.body.dname,
+        devName: req.body.devName,
+        devType: req.body.devType,
         ip: req.body.ip,
         mac: req.body.mac,
-        uid: req.body.uid
+        uid: req.body.uid,
+        blueName: req.body.blueName
     }
     User.findOne({email: req.body.email}).then((doc) => {
         
@@ -173,6 +183,7 @@ app.post('/add', (req, res) => {
             res.send(resdoc);
         })
     }).catch((e) => {
+        console.log(e);
         res.status(500).send(e);
     })
 })
@@ -182,13 +193,14 @@ app.post('/delete', (req, res) => {
     User.findOne({email: req.body.email}).then((user) => {
 
         user.devices = user.devices.filter(( device ) => {
-            return device.dname !== req.body.dname;
+            return device.devType !== req.body.devType;
         });
         user.save().then((resdoc) => {
             res.send(resdoc);
         })
 
     }).catch((e) => {
+        console.log(e);
         res.status(500).send(e);
     })
 })
@@ -201,10 +213,18 @@ app.post('/display', (req, res) => {
         res.send(devices);
 
     }).catch((e) => {
+        console.log(e);
         res.status(500).send(e);
     })
 })
 
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+           user: process.env.OOF_ID,
+           pass: process.env.OOF_PASS
+       }
+   });
 
 app.listen(port, () => {
     console.log(`started up at ${port}`);
