@@ -104,6 +104,18 @@ app.post('/delete', (req, res) => {
     })
 })
 
+//display all devices
+app.post('/display', (req, res) => {
+    User.findOne({email: req.body.email}).then((user) => {
+
+        let devices = [...user.devices]
+        res.send(devices);
+
+    }).catch((e) => {
+        res.status(500).send(e);
+    })
+})
+
 
 app.listen(port, () => {
     console.log(`started up at ${port}`);
