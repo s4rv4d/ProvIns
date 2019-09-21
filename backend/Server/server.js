@@ -34,7 +34,76 @@ app.post('/signup', (req,res) => {
     })
 })
 
-// app.post()
+app.post('/login', function(req, res) {
+    const { email, password } = req.body;
+    User.findOne({ email }, function(err, user) {
+      if (err) {
+        console.error(err);
+        res.status(500)
+          .json({
+          error: 'Internal error please try again'
+        });
+      } else if (!user) {
+        res.status(401)
+          .json({
+            error: 'No such email'
+          });
+      } else {
+        user.isCorrectPassword(password, function(err, same) {
+          if (err) {
+            res.status(500)
+              .json({
+                error: 'Internal error with password please try again'
+            });
+          } else if (!same) {
+            res.status(401)
+              .json({
+                error: 'Incorrect password'
+            });
+          } else {
+            // Issue token
+            res.status(200).send(user);
+          }
+        });
+      }
+    });
+  });
+
+//Add device
+app.post('/add', (req, res) => {
+    let device = {
+        dname: req.body.dname,
+        ip: req.body.ip,
+        mac: req.body.mac,
+        uid: req.body.uid
+    }
+    User.findOne({email: req.body.email}).then((doc) => {
+        
+        doc.devices.push(device);
+        doc.save().then((resdoc) => {
+            res.send(resdoc);
+        })
+    }).catch((e) => {
+        res.status(500).send(e);
+    })
+})
+
+//Delete device
+app.post('/delete', (req, res) => {
+    User.findOne({email: req.body.email}).then((user) => {
+
+        user.devices = user.devices.filter(( device ) => {
+            return device.dname !== req.body.dname;
+        });
+        user.save().then((resdoc) => {
+            res.send(resdoc);
+        })
+
+    }).catch((e) => {
+        res.status(500).send(e);
+    })
+})
+
 
 app.listen(port, () => {
     console.log(`started up at ${port}`);
