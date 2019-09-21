@@ -12,6 +12,8 @@
 		40CE26C92335E7FA002DAED2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CE26C72335E7FA002DAED2 /* Main.storyboard */; };
 		40CE26CB2335E7FC002DAED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CE26CA2335E7FC002DAED2 /* Assets.xcassets */; };
 		40CE26CE2335E7FC002DAED2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CE26CC2335E7FC002DAED2 /* LaunchScreen.storyboard */; };
+		40CE26DA2335EB7A002DAED2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26D92335EB7A002DAED2 /* UserModel.swift */; };
+		40CE26DC2335EC29002DAED2 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26DB2335EC29002DAED2 /* CardModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		40CE26CA2335E7FC002DAED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40CE26CD2335E7FC002DAED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40CE26CF2335E7FC002DAED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40CE26D92335EB7A002DAED2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		40CE26DB2335EC29002DAED2 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		4EAFBAF0EB362545A0AD1BDE /* Pods-ProvINS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProvINS.release.xcconfig"; path = "Target Support Files/Pods-ProvINS/Pods-ProvINS.release.xcconfig"; sourceTree = "<group>"; };
 		CF2A02DFFB96DD5E04467F63 /* Pods-ProvINS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProvINS.debug.xcconfig"; path = "Target Support Files/Pods-ProvINS/Pods-ProvINS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +100,8 @@
 		40CE26D82335E88A002DAED2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				40CE26D92335EB7A002DAED2 /* UserModel.swift */,
+				40CE26DB2335EC29002DAED2 /* CardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,7 +112,6 @@
 				CF2A02DFFB96DD5E04467F63 /* Pods-ProvINS.debug.xcconfig */,
 				4EAFBAF0EB362545A0AD1BDE /* Pods-ProvINS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -240,7 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40CE26DA2335EB7A002DAED2 /* UserModel.swift in Sources */,
 				40CE26C42335E7FA002DAED2 /* AppDelegate.swift in Sources */,
+				40CE26DC2335EC29002DAED2 /* CardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
