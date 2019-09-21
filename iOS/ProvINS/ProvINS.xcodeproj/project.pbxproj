@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0DD2B2C240FF657000D04E16 /* Pods_ProvINS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0209769C9D8FB882BD0760CA /* Pods_ProvINS.framework */; };
+		40C4F18B233693A700FFD40E /* testCoreMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4F18A233693A700FFD40E /* testCoreMLViewController.swift */; };
 		40CE26C42335E7FA002DAED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26C32335E7FA002DAED2 /* AppDelegate.swift */; };
 		40CE26C92335E7FA002DAED2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CE26C72335E7FA002DAED2 /* Main.storyboard */; };
 		40CE26CB2335E7FC002DAED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CE26CA2335E7FC002DAED2 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		0209769C9D8FB882BD0760CA /* Pods_ProvINS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProvINS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40C4F18A233693A700FFD40E /* testCoreMLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCoreMLViewController.swift; sourceTree = "<group>"; };
 		40CE26C02335E7FA002DAED2 /* ProvINS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProvINS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CE26C32335E7FA002DAED2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40CE26C82335E7FA002DAED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				40CE26E823364084002DAED2 /* testNSViewController.swift */,
+				40C4F18A233693A700FFD40E /* testCoreMLViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				40CE26DF2335F0AB002DAED2 /* ServerCall.swift in Sources */,
 				40CE26E12335F2E7002DAED2 /* ProvinsError.swift in Sources */,
 				40CE26DC2335EC29002DAED2 /* CardModel.swift in Sources */,
+				40C4F18B233693A700FFD40E /* testCoreMLViewController.swift in Sources */,
 				40CE26E72335F31F002DAED2 /* CardService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

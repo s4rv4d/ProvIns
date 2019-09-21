@@ -17,6 +17,9 @@ class testNSViewController: UIViewController, MMLANScannerDelegate,CBCentralMana
     var manager: CBCentralManager? = nil
     let BLEService = "DFB0"
     let BLECharacteristic = "DFB1"
+    var gameTimer: Timer?
+    var containsArray:[CBPeripheral]!
+    var bltName:[String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +28,12 @@ class testNSViewController: UIViewController, MMLANScannerDelegate,CBCentralMana
         print("entered here")
         self.lanScanner = MMLANScanner(delegate:self)
 //        self.lanScanner.start()
+        containsArray = [CBPeripheral]()
+        bltName = [String]()
         manager = CBCentralManager(delegate: self, queue: nil);
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            self.stopScanForBLEDevice()
+        }
 //        manager?.scanForPeripherals(withServices: [CBUUID.init(string:BLEService)], options: nil)
     }
     
@@ -66,16 +74,26 @@ class testNSViewController: UIViewController, MMLANScannerDelegate,CBCentralMana
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-//        print("peripheral \(peripheral.name)")
-        if peripheral.name == nil {
-            print("name not available")
-        } else {
-            print(peripheral.name)
+        //array should be reset initialy
+        
+        if RSSI.intValue >= -70 && RSSI.intValue <= -30 {
+            
+            if !(containsArray.contains(peripheral)) {
+                containsArray.append(peripheral)
+                
+                if peripheral.name != nil {
+                    bltName.append(peripheral.name!)
+                }
+            }
         }
     }
     
     func stopScanForBLEDevice(){
         manager?.stopScan()
         print("scan stopped")
+        print(bltName)
+        
+        //reload table view
+        
     }
 }

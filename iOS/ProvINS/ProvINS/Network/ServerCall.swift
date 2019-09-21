@@ -17,8 +17,9 @@ class ServerCall {
     enum Service: String {
         case signup = "signup"
         case login = "login"
-        case addCard = "test3"
-        case displayCards = "test4"
+        case addCard = "add"
+        case displayCards = "display"
+        case delete = "delete"
     }
     
     //MARK: - Variables

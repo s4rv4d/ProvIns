@@ -16,13 +16,15 @@ struct CardModel{
     var macAddress:String
     var ipAddress:String
     var uniqueId:String
+    var bltName:String
     
     //MARK: - Initializer
-    init(dname:String = "", macaddress:String = "", ipaddress:String = "", uniqueid:String = ""){
+    init(dname:String = "", macaddress:String = "", ipaddress:String = "", uniqueid:String = "", bltName:String = ""){
         self.dName = dname
         self.macAddress = macaddress
         self.ipAddress = ipaddress
         self.uniqueId = uniqueid
+        self.bltName = bltName
     }
     
 }
