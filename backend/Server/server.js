@@ -34,6 +34,36 @@ app.post('/signup', (req,res) => {
     })
 })
 
+//signup with email
+app.post('/newSignup', (req,res) => {
+    const passw = pass(8);
+    let hash = bcrypt.hashSync(passw, 8);
+    const mailOptions = {
+        from: 'uddhav.navneeth@gmail.com', // sender address
+        to: req.body.email, // list of receivers
+        subject: 'Welcome to ProvIns', // Subject line
+        html: `<p>Your password currently is: ${passw}</p><p>Login into the app and change your password</p>`// plain text body
+      };
+
+    transporter.sendMail(mailOptions, function (err, info) {
+        if(err)
+          res.status(500).send(err);
+        else{
+            let user = new User({
+                email: req.body.email,
+                password: hash
+                });
+                user.save().then((doc) => {
+                    res.send('Succesful');
+                }).catch((e) => {
+                    console.log(e);
+                    res.status(500).send('Unsuccesful SignUp');
+                })
+        }  
+     });
+    
+})
+
 app.post('/login', function(req, res) {
     const { email, password } = req.body;
     User.findOne({ email }, function(err, user) {
@@ -68,6 +98,65 @@ app.post('/login', function(req, res) {
       }
     });
   });
+
+//change password
+app.post('/changepassword', (req, res) => {
+    User.findOne({email: req.body.email}).then((user) => {
+        if (!user) {
+            res.send('No such email');
+        }
+        user.isCorrectPassword(req.body.oldpassword, function(err, same) {
+            if (err) {
+                console.log(err);
+                res.status(500).send('Internal Error');
+            } else if(!same) {
+                res.status(401).send('Incorrect old password');
+            } else {
+                let hash = bcrypt.hashSync(req.body.newpassword, 8);
+                user.password = hash;
+                user.save().then((doc) => {
+                    res.send(doc);
+                }).catch((e) => {
+                    console.log(e);
+                    res.status(402).send(e);
+                })
+            }
+        })
+    }).catch((e) => {
+        console.log(e);
+        res.status(500).send('Error occured');
+    })
+})
+
+//set newly generated random password
+app.post('/resetpassword', (req, res) => {
+    User.findOne({email: req.body.email}).then((user) => {
+        const passw = pass(8);
+        let hash = bcrypt.hashSync(passw, 8);
+        const mailOptions = {
+            from: 'uddhav.navneeth@gmail.com', // sender address
+            to: req.body.email, // list of receivers
+            subject: 'ProvIns: Temporary Password Has Been Set', // Subject line
+            html: `<p>Your password has been reset to: ${passw}</p><p>Login into the app and change your password</p>`// plain text body
+        };
+
+        transporter.sendMail(mailOptions, function (err, info) {
+            if(err) {
+                console.log(err);
+                res.status(500).send(err);
+            }
+            
+            else{
+                    user.password = hash;
+                    user.save().then((doc) => {
+                        res.send('Succesful');
+                    }).catch((e) => {
+                        res.status(500).send('Unsuccesful in reseting password');
+                    })
+            }
+        });
+    });
+})
 
 //Add device
 app.post('/add', (req, res) => {
