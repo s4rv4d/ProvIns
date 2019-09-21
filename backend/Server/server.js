@@ -34,7 +34,45 @@ app.post('/signup', (req,res) => {
     })
 })
 
-// app.post()
+// app.post('/login', (req,res) => {
+
+// })
+
+app.post('/login', function(req, res) {
+    const { email, password } = req.body;
+    User.findOne({ email }, function(err, user) {
+      if (err) {
+        console.error(err);
+        res.status(500)
+          .json({
+          error: 'Internal error please try again'
+        });
+      } else if (!user) {
+        res.status(401)
+          .json({
+            error: 'No such email'
+          });
+      } else {
+        user.isCorrectPassword(password, function(err, same) {
+          if (err) {
+            res.status(500)
+              .json({
+                error: 'Internal error with password please try again'
+            });
+          } else if (!same) {
+            res.status(401)
+              .json({
+                error: 'Incorrect password'
+            });
+          } else {
+            // Issue token
+            res.status(200).send(user);
+          }
+        });
+      }
+    });
+  });
+
 
 app.listen(port, () => {
     console.log(`started up at ${port}`);
