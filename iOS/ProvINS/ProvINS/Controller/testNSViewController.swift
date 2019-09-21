@@ -27,13 +27,13 @@ class testNSViewController: UIViewController, MMLANScannerDelegate,CBCentralMana
         // Do any additional setup after loading the view.
         print("entered here")
         self.lanScanner = MMLANScanner(delegate:self)
-//        self.lanScanner.start()
+        self.lanScanner.start()
         containsArray = [CBPeripheral]()
         bltName = [String]()
-        manager = CBCentralManager(delegate: self, queue: nil);
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-            self.stopScanForBLEDevice()
-        }
+//        manager = CBCentralManager(delegate: self, queue: nil);
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+//            self.stopScanForBLEDevice()
+//        }
 //        manager?.scanForPeripherals(withServices: [CBUUID.init(string:BLEService)], options: nil)
     }
     
