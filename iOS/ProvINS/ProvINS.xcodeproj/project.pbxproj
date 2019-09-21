@@ -19,6 +19,7 @@
 		40CE26E32335F2FE002DAED2 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26E22335F2FE002DAED2 /* SignUpService.swift */; };
 		40CE26E52335F316002DAED2 /* loginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26E42335F316002DAED2 /* loginService.swift */; };
 		40CE26E72335F31F002DAED2 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26E62335F31F002DAED2 /* CardService.swift */; };
+		40CE26E923364084002DAED2 /* testNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26E823364084002DAED2 /* testNSViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		40CE26E22335F2FE002DAED2 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		40CE26E42335F316002DAED2 /* loginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginService.swift; sourceTree = "<group>"; };
 		40CE26E62335F31F002DAED2 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		40CE26E823364084002DAED2 /* testNSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testNSViewController.swift; sourceTree = "<group>"; };
 		4EAFBAF0EB362545A0AD1BDE /* Pods-ProvINS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProvINS.release.xcconfig"; path = "Target Support Files/Pods-ProvINS/Pods-ProvINS.release.xcconfig"; sourceTree = "<group>"; };
 		CF2A02DFFB96DD5E04467F63 /* Pods-ProvINS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProvINS.debug.xcconfig"; path = "Target Support Files/Pods-ProvINS/Pods-ProvINS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +89,7 @@
 		40CE26D52335E823002DAED2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				40CE26E823364084002DAED2 /* testNSViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-ProvINS/Pods-ProvINS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MMLanScan/MMLanScan.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -234,6 +238,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMLanScan.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +277,7 @@
 			files = (
 				40CE26DA2335EB7A002DAED2 /* UserModel.swift in Sources */,
 				40CE26E32335F2FE002DAED2 /* SignUpService.swift in Sources */,
+				40CE26E923364084002DAED2 /* testNSViewController.swift in Sources */,
 				40CE26C42335E7FA002DAED2 /* AppDelegate.swift in Sources */,
 				40CE26E52335F316002DAED2 /* loginService.swift in Sources */,
 				40CE26DF2335F0AB002DAED2 /* ServerCall.swift in Sources */,

@@ -15,8 +15,8 @@ class ServerCall {
     
     //MARK: - Enum
     enum Service: String {
-        case signup = "test1"
-        case login = "test2"
+        case signup = "signup"
+        case login = "login"
         case addCard = "test3"
         case displayCards = "test4"
     }
@@ -25,7 +25,7 @@ class ServerCall {
     private var uuid: String!
     
     //MARK: - Functions
-    private func serverBaseURL() -> String? { return "test5" }
+    private func serverBaseURL() -> String? { return "https://provins.herokuapp.com/" }
     
     func call(service:Service, method: HTTPMethod? = .post, with bodyParam: [String: Any]? = nil, parameterEncoding: ParameterEncoding) -> AWSTask<AnyObject> {
         let taskCompletionSource = AWSTaskCompletionSource<AnyObject>()

@@ -9,4 +9,5 @@ target 'ProvINS' do
 	pod 'Alamofire'
 	pod 'SwiftyJSON'
   pod 'AWSCore'
+  pod 'MMLanScan'
 end

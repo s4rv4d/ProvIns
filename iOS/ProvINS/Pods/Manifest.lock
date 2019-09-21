@@ -1,24 +1,28 @@
 PODS:
   - Alamofire (4.8.2)
   - AWSCore (2.10.3)
+  - MMLanScan (3.0.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - AWSCore
+  - MMLanScan
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AWSCore
+    - MMLanScan
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AWSCore: f9b8a30d9e8ec07d1a6dd8f0ec5fe84b6a215041
+  MMLanScan: 86a0f77edbf163be30c1f58321469c7c8ce4c50e
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 1e3cd588e8dbe2e524e45a55c65db190bf1862bb
+PODFILE CHECKSUM: 8262ca158af8d9a3b4bad0aab8f97467899f9fac
 
 COCOAPODS: 1.6.0
