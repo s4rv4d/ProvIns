@@ -12,19 +12,23 @@ import Foundation
 struct CardModel{
     
     //MARK: - Variables
-    var dName:String
+    var devName:String
+    var devType:String
     var macAddress:String
     var ipAddress:String
     var uniqueId:String
     var bltName:String
+    var rand:String
     
     //MARK: - Initializer
-    init(dname:String = "", macaddress:String = "", ipaddress:String = "", uniqueid:String = "", bltName:String = ""){
-        self.dName = dname
+    init(devName:String = "", devType:String = "",macaddress:String = "", ipaddress:String = "", uniqueid:String = "", bltName:String = "",rand:String = ""){
+        self.devName = devName
+        self.devType = devType
         self.macAddress = macaddress
         self.ipAddress = ipaddress
         self.uniqueId = uniqueid
         self.bltName = bltName
+        self.rand = rand
     }
     
 }

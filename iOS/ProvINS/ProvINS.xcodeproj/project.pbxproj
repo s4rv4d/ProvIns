@@ -12,6 +12,14 @@
 		40451D2B2336A091004C6570 /* MobileNetV2_SSDLite.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 40451D2A2336A091004C6570 /* MobileNetV2_SSDLite.mlmodel */; };
 		40451D2D2336A0B6004C6570 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40451D2C2336A0B6004C6570 /* VideoCapture.swift */; };
 		40451D2F2336B6AD004C6570 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40451D2E2336B6AD004C6570 /* loginViewController.swift */; };
+		406127E3233746310056C293 /* testlottieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406127E2233746310056C293 /* testlottieViewController.swift */; };
+		406127E523375D4C0056C293 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406127E423375D4C0056C293 /* HomeViewController.swift */; };
+		406127E9233762750056C293 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 406127E8233762740056C293 /* data.json */; };
+		406127F22337771D0056C293 /* WifiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406127F12337771D0056C293 /* WifiViewController.swift */; };
+		406127F4233777290056C293 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406127F3233777290056C293 /* CameraViewController.swift */; };
+		406127F6233777340056C293 /* BluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406127F5233777340056C293 /* BluetoothViewController.swift */; };
+		406127F823377FB30056C293 /* WifiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406127F723377FB30056C293 /* WifiTableViewCell.swift */; };
+		406127FA23377FCB0056C293 /* BluetoothTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406127F923377FCB0056C293 /* BluetoothTableViewCell.swift */; };
 		407326252336BCAD00900824 /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 407326072336BCAD00900824 /* SF-Pro-Display-Thin.otf */; };
 		407326262336BCAD00900824 /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 407326082336BCAD00900824 /* SF-Pro-Display-SemiboldItalic.otf */; };
 		407326272336BCAD00900824 /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 407326092336BCAD00900824 /* SF-Pro-Text-Heavy.otf */; };
@@ -44,6 +52,13 @@
 		407326422336BCAD00900824 /* SF-Pro-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 407326242336BCAD00900824 /* SF-Pro-Text-SemiboldItalic.otf */; };
 		407326442336CB6800900824 /* Helper+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407326432336CB6800900824 /* Helper+Extensions.swift */; };
 		407326462336EA1D00900824 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407326452336EA1D00900824 /* SignUpViewController.swift */; };
+		407326482337193400900824 /* Private+variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407326472337193400900824 /* Private+variables.swift */; };
+		4073264A23371D2F00900824 /* ProvinsAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4073264923371D2F00900824 /* ProvinsAlertViewController.swift */; };
+		4073265023372AAB00900824 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4073264B23372AAA00900824 /* Montserrat-Light.ttf */; };
+		4073265123372AAB00900824 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4073264C23372AAB00900824 /* Montserrat-Bold.ttf */; };
+		4073265223372AAB00900824 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4073264D23372AAB00900824 /* Montserrat-Regular.ttf */; };
+		4073265323372AAB00900824 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4073264E23372AAB00900824 /* Montserrat-Italic.ttf */; };
+		4073265423372AAB00900824 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4073264F23372AAB00900824 /* Montserrat-SemiBold.ttf */; };
 		40C4F18B233693A700FFD40E /* testCoreMLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4F18A233693A700FFD40E /* testCoreMLViewController.swift */; };
 		40CE26C42335E7FA002DAED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE26C32335E7FA002DAED2 /* AppDelegate.swift */; };
 		40CE26C92335E7FA002DAED2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CE26C72335E7FA002DAED2 /* Main.storyboard */; };
@@ -65,6 +80,14 @@
 		40451D2A2336A091004C6570 /* MobileNetV2_SSDLite.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2_SSDLite.mlmodel; sourceTree = "<group>"; };
 		40451D2C2336A0B6004C6570 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		40451D2E2336B6AD004C6570 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		406127E2233746310056C293 /* testlottieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testlottieViewController.swift; sourceTree = "<group>"; };
+		406127E423375D4C0056C293 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		406127E8233762740056C293 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		406127F12337771D0056C293 /* WifiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiViewController.swift; sourceTree = "<group>"; };
+		406127F3233777290056C293 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		406127F5233777340056C293 /* BluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViewController.swift; sourceTree = "<group>"; };
+		406127F723377FB30056C293 /* WifiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiTableViewCell.swift; sourceTree = "<group>"; };
+		406127F923377FCB0056C293 /* BluetoothTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothTableViewCell.swift; sourceTree = "<group>"; };
 		407326072336BCAD00900824 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		407326082336BCAD00900824 /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		407326092336BCAD00900824 /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
@@ -97,6 +120,13 @@
 		407326242336BCAD00900824 /* SF-Pro-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		407326432336CB6800900824 /* Helper+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+Extensions.swift"; sourceTree = "<group>"; };
 		407326452336EA1D00900824 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		407326472337193400900824 /* Private+variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Private+variables.swift"; sourceTree = "<group>"; };
+		4073264923371D2F00900824 /* ProvinsAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinsAlertViewController.swift; sourceTree = "<group>"; };
+		4073264B23372AAA00900824 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		4073264C23372AAB00900824 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		4073264D23372AAB00900824 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		4073264E23372AAB00900824 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		4073264F23372AAB00900824 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		40C4F18A233693A700FFD40E /* testCoreMLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCoreMLViewController.swift; sourceTree = "<group>"; };
 		40CE26C02335E7FA002DAED2 /* ProvINS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProvINS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CE26C32335E7FA002DAED2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +166,54 @@
 			path = MLModel;
 			sourceTree = "<group>";
 		};
+		406127DF23373F4C0056C293 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				406127E8233762740056C293 /* data.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		406127EE23376D510056C293 /* Test ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				406127E2233746310056C293 /* testlottieViewController.swift */,
+				40CE26E823364084002DAED2 /* testNSViewController.swift */,
+				40C4F18A233693A700FFD40E /* testCoreMLViewController.swift */,
+			);
+			path = "Test ViewControllers";
+			sourceTree = "<group>";
+		};
+		406127EF23376D640056C293 /* Reg ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				40451D2E2336B6AD004C6570 /* loginViewController.swift */,
+				407326452336EA1D00900824 /* SignUpViewController.swift */,
+			);
+			path = "Reg ViewControllers";
+			sourceTree = "<group>";
+		};
+		406127F023376D870056C293 /* Main ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				406127E423375D4C0056C293 /* HomeViewController.swift */,
+				406127F12337771D0056C293 /* WifiViewController.swift */,
+				406127F3233777290056C293 /* CameraViewController.swift */,
+				406127F5233777340056C293 /* BluetoothViewController.swift */,
+				406127FB2337862E0056C293 /* TableView Cells */,
+			);
+			path = "Main ViewControllers";
+			sourceTree = "<group>";
+		};
+		406127FB2337862E0056C293 /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				406127F723377FB30056C293 /* WifiTableViewCell.swift */,
+				406127F923377FCB0056C293 /* BluetoothTableViewCell.swift */,
+			);
+			path = "TableView Cells";
+			sourceTree = "<group>";
+		};
 		407326052336BCAD00900824 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +239,11 @@
 				407326122336BCAD00900824 /* SF-Pro-Display-Semibold.otf */,
 				407326132336BCAD00900824 /* SF-Pro-Text-Regular.otf */,
 				407326142336BCAD00900824 /* SF-Pro-Text-Bold.otf */,
+				4073264C23372AAB00900824 /* Montserrat-Bold.ttf */,
+				4073264E23372AAB00900824 /* Montserrat-Italic.ttf */,
+				4073264B23372AAA00900824 /* Montserrat-Light.ttf */,
+				4073264D23372AAB00900824 /* Montserrat-Regular.ttf */,
+				4073264F23372AAB00900824 /* Montserrat-SemiBold.ttf */,
 				407326152336BCAD00900824 /* SF-Pro-Display-MediumItalic.otf */,
 				407326162336BCAD00900824 /* SF-Pro-Display-HeavyItalic.otf */,
 				407326172336BCAD00900824 /* SF-Pro-Display-Ultralight.otf */,
@@ -202,6 +285,7 @@
 		40CE26C22335E7FA002DAED2 /* ProvINS */ = {
 			isa = PBXGroup;
 			children = (
+				406127DF23373F4C0056C293 /* Animations */,
 				407326052336BCAD00900824 /* Fonts */,
 				40451D2523369D6C004C6570 /* MLModel */,
 				40CE26D62335E82C002DAED2 /* Helpers */,
@@ -218,10 +302,9 @@
 		40CE26D52335E823002DAED2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				40CE26E823364084002DAED2 /* testNSViewController.swift */,
-				40C4F18A233693A700FFD40E /* testCoreMLViewController.swift */,
-				40451D2E2336B6AD004C6570 /* loginViewController.swift */,
-				407326452336EA1D00900824 /* SignUpViewController.swift */,
+				406127EE23376D510056C293 /* Test ViewControllers */,
+				406127EF23376D640056C293 /* Reg ViewControllers */,
+				406127F023376D870056C293 /* Main ViewControllers */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -234,6 +317,8 @@
 				40451D2823369FB1004C6570 /* BoundingBoxView.swift */,
 				40451D2C2336A0B6004C6570 /* VideoCapture.swift */,
 				407326432336CB6800900824 /* Helper+Extensions.swift */,
+				407326472337193400900824 /* Private+variables.swift */,
+				4073264923371D2F00900824 /* ProvinsAlertViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -346,10 +431,12 @@
 			files = (
 				407326362336BCAD00900824 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				4073262D2336BCAD00900824 /* SF-Pro-Display-Medium.otf in Resources */,
+				406127E9233762750056C293 /* data.json in Resources */,
 				4073263B2336BCAD00900824 /* SF-Pro-Text-RegularItalic.otf in Resources */,
 				4073262B2336BCAD00900824 /* SF-Pro-Text-MediumItalic.otf in Resources */,
 				4073263A2336BCAD00900824 /* SF-Pro-Text-BoldItalic.otf in Resources */,
 				407326252336BCAD00900824 /* SF-Pro-Display-Thin.otf in Resources */,
+				4073265023372AAB00900824 /* Montserrat-Light.ttf in Resources */,
 				4073263C2336BCAD00900824 /* SF-Pro-Text-Semibold.otf in Resources */,
 				407326272336BCAD00900824 /* SF-Pro-Text-Heavy.otf in Resources */,
 				407326342336BCAD00900824 /* SF-Pro-Display-HeavyItalic.otf in Resources */,
@@ -359,9 +446,12 @@
 				4073263D2336BCAD00900824 /* SF-Pro-Text-HeavyItalic.otf in Resources */,
 				407326402336BCAD00900824 /* SF-Pro-Text-Medium.otf in Resources */,
 				407326372336BCAD00900824 /* SF-Pro-Display-LightItalic.otf in Resources */,
+				4073265323372AAB00900824 /* Montserrat-Italic.ttf in Resources */,
 				407326382336BCAD00900824 /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				407326352336BCAD00900824 /* SF-Pro-Display-Ultralight.otf in Resources */,
+				4073265123372AAB00900824 /* Montserrat-Bold.ttf in Resources */,
 				407326392336BCAD00900824 /* SF-Pro-Display-Black.otf in Resources */,
+				4073265223372AAB00900824 /* Montserrat-Regular.ttf in Resources */,
 				407326412336BCAD00900824 /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				407326422336BCAD00900824 /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
 				40CE26CE2335E7FC002DAED2 /* LaunchScreen.storyboard in Resources */,
@@ -370,6 +460,7 @@
 				4073262E2336BCAD00900824 /* SF-Pro-Display-Heavy.otf in Resources */,
 				407326322336BCAD00900824 /* SF-Pro-Text-Bold.otf in Resources */,
 				40CE26C92335E7FA002DAED2 /* Main.storyboard in Resources */,
+				4073265423372AAB00900824 /* Montserrat-SemiBold.ttf in Resources */,
 				407326292336BCAD00900824 /* SF-Pro-Display-Light.otf in Resources */,
 				4073262A2336BCAD00900824 /* SF-Pro-Display-Regular.otf in Resources */,
 				407326262336BCAD00900824 /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
@@ -396,6 +487,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/MMLanScan/MMLanScan.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -405,6 +497,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMLanScan.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -447,11 +540,20 @@
 				40CE26E923364084002DAED2 /* testNSViewController.swift in Sources */,
 				40451D2D2336A0B6004C6570 /* VideoCapture.swift in Sources */,
 				40CE26C42335E7FA002DAED2 /* AppDelegate.swift in Sources */,
+				406127E3233746310056C293 /* testlottieViewController.swift in Sources */,
 				40CE26E52335F316002DAED2 /* loginService.swift in Sources */,
+				4073264A23371D2F00900824 /* ProvinsAlertViewController.swift in Sources */,
+				406127F22337771D0056C293 /* WifiViewController.swift in Sources */,
+				406127FA23377FCB0056C293 /* BluetoothTableViewCell.swift in Sources */,
+				406127F4233777290056C293 /* CameraViewController.swift in Sources */,
+				406127F823377FB30056C293 /* WifiTableViewCell.swift in Sources */,
 				40CE26DF2335F0AB002DAED2 /* ServerCall.swift in Sources */,
 				40CE26E12335F2E7002DAED2 /* ProvinsError.swift in Sources */,
 				407326462336EA1D00900824 /* SignUpViewController.swift in Sources */,
+				407326482337193400900824 /* Private+variables.swift in Sources */,
+				406127F6233777340056C293 /* BluetoothViewController.swift in Sources */,
 				40CE26DC2335EC29002DAED2 /* CardModel.swift in Sources */,
+				406127E523375D4C0056C293 /* HomeViewController.swift in Sources */,
 				40451D2B2336A091004C6570 /* MobileNetV2_SSDLite.mlmodel in Sources */,
 				40C4F18B233693A700FFD40E /* testCoreMLViewController.swift in Sources */,
 				40CE26E72335F31F002DAED2 /* CardService.swift in Sources */,

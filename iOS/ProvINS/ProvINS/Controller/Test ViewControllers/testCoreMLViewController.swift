@@ -10,6 +10,9 @@ import UIKit
 import AVFoundation
 import Vision
 
+
+var name = ""
+
 class testCoreMLViewController: UIViewController {
     
     
@@ -21,6 +24,7 @@ class testCoreMLViewController: UIViewController {
     var previewLayer:AVCaptureVideoPreviewLayer!
     var captureDevice : AVCaptureDevice!
     let session = AVCaptureSession()
+    var delegate:hi!
     
     var videoCapture: VideoCapture!
     var currentBuffer: CVPixelBuffer?
@@ -160,7 +164,7 @@ class testCoreMLViewController: UIViewController {
                 let bestClass = prediction.labels[0].identifier
                 let confidence = prediction.labels[0].confidence
                 
-                let array = ["laptop","cell phone","mouse"]
+                let array = ["laptop","cell phone","mouse","tv","keyboard","oven","microwave","toaster","refrigerator"]
                 
                 if array.contains(bestClass) {
                     // Show the bounding box.
@@ -170,7 +174,11 @@ class testCoreMLViewController: UIViewController {
                     boundingBoxViews[i].show(frame: rect, label: label, color: color)
                     
                     //cancel and go back to view
-//                    videoCapture.stop()
+                    videoCapture.stop()
+                    name = bestClass
+                    deviceType = bestClass
+                    delegate.dataName(name: bestClass)
+                    self.dismiss(animated: true, completion: nil)
                 }
             } else {
                 boundingBoxViews[i].hide()

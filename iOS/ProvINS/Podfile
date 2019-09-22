@@ -10,4 +10,5 @@ target 'ProvINS' do
 	pod 'SwiftyJSON'
   pod 'AWSCore'
   pod 'MMLanScan'
+  pod 'lottie-ios'
 end

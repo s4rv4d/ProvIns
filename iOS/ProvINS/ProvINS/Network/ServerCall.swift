@@ -15,7 +15,7 @@ class ServerCall {
     
     //MARK: - Enum
     enum Service: String {
-        case signup = "signup"
+        case signup = "newSignup"
         case login = "login"
         case addCard = "add"
         case displayCards = "display"

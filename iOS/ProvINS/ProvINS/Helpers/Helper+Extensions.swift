@@ -12,6 +12,10 @@ extension UIColor{
     convenience init(_ r: Float,_ g: Float,_ b: Float,_ a: Float) {
         self.init(red: CGFloat(r/255), green: CGFloat(g/255), blue: CGFloat(b/255), alpha: CGFloat(a))
     }
+    
+    class func primaryColor() -> UIColor {
+        return UIColor(red: 40/255.0, green: 138/255.0, blue: 202/255.0, alpha: 1.0)
+    }
 }
 
 extension UITextField {
@@ -36,4 +40,10 @@ extension UITextField {
         self.backgroundColor = .white
         self.layer.cornerRadius = cornerRadius
     }
+}
+
+func isValidEmail(testStr:String) -> Bool {
+    let emailRegEx = "[A-Z0-9a-z._%]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+    let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+    return emailTest.evaluate(with: testStr)
 }
