@@ -21,6 +21,7 @@ coreml_model = tfcoreml.convert(
         class_labels=MODEL_LABELS,
         image_scale=IMAGE_INPUT_SCALE
 )'''
+#Final commit
 import tensorflow as tf
 from tensorflow.python.tools import strip_unused_lib
 from tensorflow.python.framework import dtypes
