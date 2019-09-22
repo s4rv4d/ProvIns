@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const pass = require("nanoid");
+const Cryptr = require('cryptr');
 require('dotenv').config();
 
 let {User} = require('./models/user');
@@ -40,31 +41,41 @@ app.post('/signup', (req,res) => {
 
 //signup with email
 app.post('/newSignup', (req,res) => {
-    const passw = pass(8);
-    let hash = bcrypt.hashSync(passw, 8);
-    const mailOptions = {
-        from: 'uddhav.navneeth@gmail.com', // sender address
-        to: req.body.email, // list of receivers
-        subject: 'Welcome to ProvIns', // Subject line
-        html: `<p>Your password currently is: ${passw}</p><p>Login into the app and change your password</p>`// plain text body
-      };
+    User.findOne({email:req.body.email}).then((user) => {
+        if(user) {
+            res.status(500).send('Existing Email ID');
+        }
+        else {
+            const passw = pass(8);
+            let hash = bcrypt.hashSync(passw, 8);
+            const mailOptions = {
+                from: 'uddhav.navneeth@gmail.com', // sender address
+                to: req.body.email, // list of receivers
+                subject: 'Welcome to ProvIns', // Subject line
+                html: `<p>Your password currently is: ${passw}</p><p>Login into the app and change your password</p>`// plain text body
+            };
 
-    transporter.sendMail(mailOptions, function (err, info) {
-        if(err)
-          res.status(500).send(err);
-        else{
-            let user = new User({
-                email: req.body.email,
-                password: hash
-                });
-                user.save().then((doc) => {
-                    res.send('Succesful');
-                }).catch((e) => {
-                    console.log(e);
-                    res.status(500).send('Unsuccesful SignUp');
-                })
-        }  
-     });
+            transporter.sendMail(mailOptions, function (err, info) {
+                if(err)
+                res.status(500).send(err);
+                else{
+                    let user = new User({
+                        email: req.body.email,
+                        password: hash
+                        });
+                        user.save().then((doc) => {
+                            res.send(doc);
+                        }).catch((e) => {
+                            console.log(e);
+                            res.status(500).send('Unsuccesful SignUp');
+                        })
+                }  
+            });    
+        }
+        
+
+    })
+    
     
 })
 
@@ -168,16 +179,21 @@ app.post('/resetpassword', (req, res) => {
 
 //Add device
 app.post('/add', (req, res) => {
+    const rand = pass(8);
+    let mac = req.body.mac;
+    const cryptr = new Cryptr(rand);
+    const uid = cryptr.encrypt(mac);
     let device = {
         devName: req.body.devName,
         devType: req.body.devType,
         ip: req.body.ip,
         mac: req.body.mac,
-        uid: req.body.uid,
-        blueName: req.body.blueName
+        uid: uid,
+        blueName: req.body.blueName,
+        rand: rand
     }
     User.findOne({email: req.body.email}).then((doc) => {
-        
+        console.log(doc);
         doc.devices.push(device);
         doc.save().then((resdoc) => {
             res.send(resdoc);
@@ -193,7 +209,7 @@ app.post('/delete', (req, res) => {
     User.findOne({email: req.body.email}).then((user) => {
 
         user.devices = user.devices.filter(( device ) => {
-            return device.devType !== req.body.devType;
+            return device.mac !== req.body.mac;
         });
         user.save().then((resdoc) => {
             res.send(resdoc);
@@ -216,6 +232,18 @@ app.post('/display', (req, res) => {
         console.log(e);
         res.status(500).send(e);
     })
+})
+
+app.post('/algoTest', (req, res) => {
+    const rand = pass(8);
+    let mac = req.body.mac;
+    const cryptr = new Cryptr(rand);
+    const uid = cryptr.encrypt(mac);
+    console.log("rand:"+rand);
+    console.log("UID:"+uid);
+    const newmac = cryptr.decrypt(uid);
+    console.log("Actual MAC addr:"+newmac);
+    res.send(uid);
 })
 
 const transporter = nodemailer.createTransport({

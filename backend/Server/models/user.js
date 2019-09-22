@@ -37,6 +37,10 @@ const UserSchema = mongoose.Schema({
         blueName: {
             type: String,
             trim: true
+        },
+        rand: {
+            type: String,
+            trim: true
         }
     }]
 });
